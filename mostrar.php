@@ -6,4 +6,5 @@ foreach($_SESSION['Livro'] as $val){
   echo($oLivro);
   echo('<br>');
 }
+echo('foi');
 ?>
