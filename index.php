@@ -13,7 +13,7 @@
 //Mostrar os livros
    if (isset($_POST['mostrar'])){
 
-      //header( #ADICIONAR CAMINHO PARA O MOSTRAR);
+      header('Location: https://trab3.herokuapp.com/mostrar.php');
    
    }
 //Mostrar um livro específico
