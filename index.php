@@ -1,6 +1,6 @@
 <?php
    session_start();
-   $_SESSION['livro'][]=header();
+   //$_SESSION['livro'][]=header();
 //Inserir livros
    if (isset ($_POST['nomeAutor'])){
             $_SESSION['Livro'][] = jason_encode($_POST);
@@ -13,7 +13,7 @@
 //Mostrar os livros
    if (isset($_POST['mostrar'])){
 
-      header( #ADICIONAR CAMINHO PARA O MOSTRAR);
+      //header( #ADICIONAR CAMINHO PARA O MOSTRAR);
    
    }
 //Mostrar um livro específico
