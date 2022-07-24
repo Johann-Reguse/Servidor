@@ -3,7 +3,7 @@
    //$_SESSION['livro'][]=header();
 //Inserir livros
    if (isset ($_POST['nomeAutor'])){
-            $_SESSION['Livro'][] = jason_encode($_POST);
+            $_SESSION['Livro'][] = json_encode($_POST);
             echo ('Livro Inserido');
    }
 //Limpar cache
