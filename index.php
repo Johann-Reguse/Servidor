@@ -4,7 +4,7 @@
 //Inserir livros
    if (isset ($_POST['nomeAutor'])){
             $_SESSION['Livro'][] = json_encode($_POST);
-            echo ('Livro Inserido');
+            echo ('<h3>Livro Inserido</h3>');
    }
 //Limpar cache
    if (isset($_POST['limpar'])){
