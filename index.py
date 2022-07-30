@@ -1,27 +1,18 @@
 
-from flask import Flask, request, jsonify
+import os
+from flask import Flask, jsonify, request
+
 
 app = Flask(__name__)
 
-livros = [
-    {"id": 1, "name": "Thailand", "capital": "Bangkok", "area": 513120},
-    {"id": 2, "name": "Australia", "capital": "Canberra", "area": 7617930},
-    {"id": 3, "name": "Egypt", "capital": "Cairo", "area": 1010408},
-]
 
-def _find_next_id():
-    return max(livros["id"] for livros in livros) + 1
+@app.route('/')
+def dont_panic():
+    if request.headers.get('Authorization') == '42':
+        return jsonify({"42": "The answer to life the universe and everything"})
+    return jsonify({"message": "Don't panic!"})
 
-@app.get("/livros")
-def get_livros():
-    return jsonify(livros)
 
-@app.post("/inserir")
-def add_livros():
-    if request.is_json:
-        livros = request.get_json()
-        livros["id"] = _find_next_id()
-        livros.append(livros)
-        return livros, 201
-    return {"error": "Request must be JSON"}, 415
-
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
