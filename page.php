@@ -7,7 +7,8 @@
 		echo "Livro enviado";
 		$values = file_get_contents('php://input');
 		print_r($value);
-		$dadosJsonDecodificados["Livro"][] = $value;
+		$values = json_decode($value, true);
+		$dadosJsonDecodificados["Livro"][] = $values;
 		$fp = fopen('db.json', 'w');
 		fwrite($fp, json_encode($dadosJsonDecodificados));
 		fclose($fp);
